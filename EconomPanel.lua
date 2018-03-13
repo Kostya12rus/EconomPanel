@@ -1,6 +1,6 @@
 local EconomPanel = {}
-EconomPanel.optionEnable = Menu.AddOption({"Utility", "EconomPanel"}, "Activation", "")
-EconomPanel.KeySetting = Menu.AddKeyOption({"Utility", "EconomPanel"}, "Key for Setting", Enum.ButtonCode.BUTTON_CODE_NONE)
+EconomPanel.optionEnable = Menu.AddOption({"Awareness", "Kostyas12rus's Economic Panel"}, "Activation", "")
+EconomPanel.KeySetting = Menu.AddKeyOption({"Awareness", "Kostyas12rus's Economic Panel"}, "Key for Setting", Enum.ButtonCode.BUTTON_CODE_NONE)
 
 function EconomPanel.OnUpdate()
 	if not Menu.IsEnabled(EconomPanel.optionEnable) then return end
