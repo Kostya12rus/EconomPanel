@@ -169,7 +169,7 @@ function EconomPanel.OnDraw()
 			ypos = Config.ReadInt("EconomPanel", "ypos", 200)
 			for i,hero in pairs(EconomPanel.player) do
 				Renderer.SetDrawColor(255,255,255,visibility)
-				if hero[1] and Entity.IsPlayer(Entity.GetOwner(hero[1])) then
+				if hero[1] and NPCs.Contains(hero[1]) and Entity.IsPlayer(Entity.GetOwner(hero[1])) then
 					local imageHandle
 					if heroicon[NPC.GetUnitName(hero[1])] then
 						imageHandle = heroicon[NPC.GetUnitName(hero[1])]
@@ -186,7 +186,7 @@ function EconomPanel.OnDraw()
 					local prochent = hero[2]/(EconomPanel.player[1][2]/100)/100
 					Renderer.DrawImage(imageHandle, math.ceil(xpos), math.ceil(ypos), math.ceil(sizeBarx), math.ceil(sizeBary))
 					xpos = xpos + sizeBarx
-					if Entity.IsSameTeam(Heroes.GetLocal(),hero[1]) then
+					if Heroes.GetLocal() and Entity.IsSameTeam(Heroes.GetLocal(),hero[1]) then
 						Renderer.SetDrawColor(0,100,0,visibility)
 					else
 						Renderer.SetDrawColor(100,0,0,visibility)
