@@ -8,7 +8,7 @@ function EconomPanel.OnUpdate()
 	if not myHero then return end
 	EconomPanel.player = {}
 	for i,hero in pairs(Heroes.GetAll()) do
-		if hero and EconomPanel.NeedAdd(hero) and not NPC.HasModifier(hero,"modifier_monkey_king_fur_army_soldier_hidden") then
+		if hero and EconomPanel.NeedAdd(hero) and not NPC.HasModifier(hero,"modifier_monkey_king_fur_army_soldier") then
 			havemoney = 0
 			for j = 0,14 do
 				local item = NPC.GetItemByIndex(hero,j)
